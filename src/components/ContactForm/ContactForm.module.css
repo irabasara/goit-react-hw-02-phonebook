@@ -1,0 +1,24 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.form label {
+  font-weight: 500;
+  font-size: 16px;
+  margin: 10px 0;
+}
+.input {
+  width: 200px;
+  padding: 10px;
+}
+.addButton {
+  width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: background-color 300ms ease;
+}
+.addButton:hover {
+  cursor: pointer;
+  background-color: rgb(166, 166, 166);
+}

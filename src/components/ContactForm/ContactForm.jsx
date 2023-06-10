@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import css from './ContactForm.module.css'
+import css from './ContactForm.module.css';
 import { nanoid } from 'nanoid';
 
 export class ContactForm extends Component {
@@ -16,13 +16,13 @@ export class ContactForm extends Component {
   };
 
   handleSubmit = e => {
-    // const { name, value } = e.target;
+    const { name, number } = this.state;
 
     e.preventDefault();
     const newContact = {
       id: nanoid(),
-      name: this.state.name,
-      number: this.state.number,
+      name: name,
+      number: number,
     };
     this.props.onSubmit(newContact);
     this.reset();
@@ -35,11 +35,16 @@ export class ContactForm extends Component {
     });
   };
 
+  nameId = nanoid();
+  numberId = nanoid();
+
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor="name">name</label>
+      <form onSubmit={this.handleSubmit} className={css.form}>
+        <label htmlFor={this.nameId}>name</label>
         <input
+          id={this.nameId}
+          className={css.input}
           type="text"
           name="name"
           value={this.state.name}
@@ -47,21 +52,21 @@ export class ContactForm extends Component {
           required
           onChange={this.handleChenge}
         />
-        <label htmlFor="number">
-          number
-          <input
-            type="tel"
-            name="number"
-            value={this.state.number}
-            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-            required
-            onChange={this.handleChenge}
-          />
-        </label>
-        <button type="submit">Add contact</button>
+        <label htmlFor={this.numberId}>number</label>
+        <input
+          id={this.numberId}
+          className={css.input}
+          type="tel"
+          name="number"
+          value={this.state.number}
+          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+          required
+          onChange={this.handleChenge}
+        />
+        <button type="submit" className={css.addButton}>
+          Add contact
+        </button>
       </form>
     );
   }
 }
-
-export default ContactForm;
