@@ -60,7 +60,7 @@ export class App extends Component {
     return (
       <div className={css.section_contacts}>
         <div className={css.section}>
-          <h1>Phonebook</h1>
+          <h2>Phonebook</h2>
           <ContactForm onSubmit={this.onContactFormSubmit} />
         </div>
         <div className={css.section}>

@@ -1,4 +1,4 @@
-// import css from './contactList.module.css';
+import css from './contactList.module.css';
 
 export const ContactList = ({ contacts, onDelete }) => {
   return (
@@ -6,8 +6,8 @@ export const ContactList = ({ contacts, onDelete }) => {
       {contacts.map(contact => {
         const { id, name, number } = contact;
         return (
-          <li key={id}>
-            <p>{`${name}:${number}`}</p>
+          <li key={id} className={css.contactsItem}>
+            <p>{`${name} : ${number}`}</p>
             <button
               onClick={() => {
                 onDelete(id);
