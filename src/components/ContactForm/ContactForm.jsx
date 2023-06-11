@@ -3,7 +3,6 @@ import css from './ContactForm.module.css';
 import { nanoid } from 'nanoid';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
-// import { Custom } from 'components/Custom/Custom';
 
 const Schema = yup.object().shape({
   name: yup
