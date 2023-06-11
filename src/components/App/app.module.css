@@ -1,4 +1,4 @@
-.section_contacts {
+.phonebook {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,6 +14,6 @@
   box-shadow: 2px 2px 20px 2px #766f7d;
 }
 
-/* .section h2 {
-  margin: 0 0 0 10px;
-} */
+.contactSection {
+  min-height: 280px;
+}

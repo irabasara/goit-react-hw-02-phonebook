@@ -58,12 +58,12 @@ export class App extends Component {
     const filteredContact = this.getFilteredContact();
 
     return (
-      <div className={css.section_contacts}>
+      <div className={css.phonebook}>
         <div className={css.section}>
           <h2>Phonebook</h2>
           <ContactForm onSubmit={this.onContactFormSubmit} />
         </div>
-        <div className={css.section}>
+        <div className={`${css.section} ${css.contactSection}`}>
           <h2>Contacts</h2>
 
           <Filter value={this.state.filter} onChange={this.changeFilter} />
