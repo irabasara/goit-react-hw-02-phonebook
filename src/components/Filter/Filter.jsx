@@ -1,4 +1,5 @@
 import css from './filter.module.css';
+import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 
 export const Filter = ({ value, onChange }) => {
@@ -17,4 +18,9 @@ export const Filter = ({ value, onChange }) => {
       />
     </div>
   );
+};
+
+Filter.propTypes = {
+  value: PropTypes.string,
+  onChange: PropTypes.func,
 };

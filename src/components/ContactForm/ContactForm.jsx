@@ -3,6 +3,7 @@ import css from './ContactForm.module.css';
 import { nanoid } from 'nanoid';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
+import PropTypes from 'prop-types';
 
 const Schema = yup.object().shape({
   name: yup
@@ -44,6 +45,10 @@ export class ContactForm extends Component {
   numberId = nanoid();
 
   render() {
+    ContactForm.propType = {
+      onSubmit: PropTypes.func,
+    };
+
     return (
       <Formik
         initialValues={initialValues}
